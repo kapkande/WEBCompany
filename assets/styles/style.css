@@ -1,0 +1,49 @@
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.wrap {
+    max-width: 1128px;
+    margin: 0 auto;
+}
+
+* {
+    font-family: "PT Sans", sans-serif;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.shadow.true {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.first {}
+
+.cecond {
+    display: inline;
+}
+
+@media (max-width: 1140px) {
+    .wrapper {}
+
+    .wrap {
+        max-width: 985px;
+    }
+
+    .cecond {
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .wrap {
+        max-width: 729px
+    }
+}
