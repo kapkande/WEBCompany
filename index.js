@@ -21,7 +21,7 @@
     // description creation
     const description = document.createElement("p");
     description.classList.add("products__description");
-    description.innerHTML = `<span class='first'>Полнокадровая цифровая зеркальная камера</span><span class='second'>, предназначенная для опытных любителей</span><span class='third'> профессиональных фотографов</span><span class='fourth'> и видеооператоров. Преемник успешной модели EOS 5D Mark II. Фотоаппарат имеет 22.3 Мп. <span style="white-space: nowrap;">CMOS-сенсор</span> размером 36х24 мм, <span style="white-space: nowrap;">14-битный</span> процессор DIGIC 5+, <span style="white-space: nowrap;">61-точечный</span>  автофокус</span>.`;
+    description.innerHTML = `<span class='first'>Полнокадровая цифровая зеркальная камера</span><span class='second'>, предназначенная для опытных любителей</span><span class='third'> профессиональных фотографов</span><span class='fourth'> и видеооператоров. Преемник успешной модели EOS 5D Mark II. Фотоаппарат имеет 22.3 Мп</span><span class='fifth'> . <span style="white-space: nowrap;">CMOS-сенсор</span> размером 36х24 мм, <span style="white-space: nowrap;">14-битный</span> процессор DIGIC 5+, <span style="white-space: nowrap;">61-точечный</span>  автофокус</span>.`;
     textBlock.append(description);
     //withoutDiscount creation
     const withoutDiscount = document.createElement("div");
@@ -60,39 +60,46 @@ function formatPrice(event) {
   target.value = value;
 }
 
-// function toggleOptions(event) {
-//   const span = document.querySelector('span')
-//   const selectWrapper = event.target.closest('.custom-select-wrapper');
-//   const optionsList = selectWrapper.querySelector('.custom-options');
-//   const target = event.target;
-//   // if(target.className == "custom-option"){
-//   //   let spanP = span.textContent;
-//   //   let targetP = target.textContent
-//   //   span.textContent = targetP
-//   //   target.textContent = spanP
-//   // }
-//   optionsList.classList.toggle('open');
-// }
-
+const filterBurger = document.querySelector(".filter__burger");
+filterBurger.addEventListener("click", () => {
+  popup.classList.toggle("active");
+});
+const popupClose = document.querySelector(".popup__close");
+popupClose.addEventListener("click", () => {
+  popup.classList.toggle("active");
+});
 function toggleOptions(event) {
   const selectWrapper = event.target.closest(".custom-select-wrapper");
   selectWrapper.classList.toggle("open");
 }
 
+const headerLoupe = document.querySelector(".header__loupe");
+headerLoupe.addEventListener("click", () => {
+  toggle(searchInput);
+});
+
+
+
+
 const shadow = document.querySelector(".shadow");
 shadow.addEventListener("click", closePanel);
+
 const logoBurger = document.querySelector(".logo__burger");
 logoBurger.addEventListener("click", () => {
   toggle(navBar);
+  shadowToggle()
 });
 
 function toggle(item) {
-  item.classList.add("open");
-  shadow.classList.add("true");
+  item.classList.toggle("open");
+  
+}
+function shadowToggle() {
+  const shadow = document.querySelector(".shadow");
+  shadow.classList.toggle("true");
 }
 function closePanel() {
-  console.log("s");
   const open = document.querySelector(".open");
   open.classList.remove("open");
-  shadow.classList.remove("true");
+  shadowToggle()
 }

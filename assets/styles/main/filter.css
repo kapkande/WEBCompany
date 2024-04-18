@@ -165,3 +165,11 @@ select option:hover {
         color: #333333;
     }
 }
+
+@media (max-width: 730px) {
+    .filter {
+        margin: 13px auto 0 auto;
+    }
+    
+}
+

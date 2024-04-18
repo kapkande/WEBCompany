@@ -171,6 +171,21 @@ a:hover {
     background-image: url(../icons/cartActive.svg);
 }
 
+.header__loupe {
+    display: none;
+    width: 16.2px;
+    height: 16.2px;
+    background-image: url(../icons/loupe.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.header__loupe:hover,
+.header__loupe:focus,
+.header__loupe:active {
+    background-image: url(../icons/loupeActive.svg);
+}
+
 @media (max-width: 1140px) {
     .logo .wrap {
         gap: 42px;
@@ -224,6 +239,7 @@ a:hover {
         z-index: 10;
         width: 100%;
         background-color: #265C9A;
+        padding-bottom: 14px;
     }
 
     .header__nav-item {
@@ -286,5 +302,68 @@ a:hover {
 
     .header__nav {
         padding-bottom: 13px;
+    }
+}
+
+@media (max-width: 730px) {
+    .header__search-icon {
+        display: none;
+    }
+
+    .header__loupe {
+        display: block;
+    }
+
+    .header__search-input {
+        display: none;
+    }
+
+    .header__search {
+        border: none;
+        width: 13px;
+        margin: 0;
+    }
+
+    .header__search-icon {
+        /* padding: 5px; */
+        width: 16.2px;
+        height: 16.2px;
+    }
+
+    .logo .wrap {
+        gap: 0;
+        padding-top: 6px;
+        justify-content: space-between
+    }
+
+    .logo__burger {
+        margin: 0 -13% 0 0;
+    }
+
+    .header__cart {
+        margin: 0 0 0 -13%;
+    }
+
+    .header__nav-item {
+        font-size: 14px;
+    }
+
+    .header__nav-item a {
+        padding: 10px 0 10px 7px;
+    }
+
+    .header__nav.open {
+        transform: translateY(0);
+    }
+
+    .header__search-input.open {
+        display: block;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        width: 100%;
+        padding: 11px 3px 12px 20px;
+        background-color: #1F497B;
+        top: 72px;
     }
 }

@@ -47,3 +47,9 @@ select:focus {
         max-width: 729px
     }
 }
+@media (max-width: 730px) {
+    .wrap {
+        max-width: 280px;
+    }
+    
+}

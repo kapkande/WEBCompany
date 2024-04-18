@@ -245,9 +245,11 @@
     .products {
         padding-bottom: 36px;
     }
+
     .products .wrap {
         max-height: 1093px;
     }
+
     .products__item {
         width: 364px;
         height: 364px;
@@ -287,14 +289,85 @@
     .products__item:first-child .products__price {
         width: 326px;
     }
+
     .products__title {
         padding: 25px 0 0px 0;
     }
+
     .products__textBlock {
         width: 315px;
         padding-top: 5px;
     }
+
     .products__price {
         width: 316px;
+    }
+}
+
+@media (max-width: 730px) {
+    .products__item {
+        width: 280px;
+    }
+
+    .products__item:first-child {
+        width: 280px;
+        height: 588px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products__item:first-child .products__img {
+        height: 240px;
+        background-size: 240px;
+        background-position: 0px 3px;
+        flex: 0 0 240px;
+        width: 240px;
+    }
+    .products__item:first-child .products__textBlock {
+        flex: 1 1;
+    }
+    .products__textBlock {
+        width: 244px;
+        padding-top: 0px;
+    }
+    .products__item:first-child .products__title {
+        padding: 27px 0 4px 0;
+    }
+    .products__item:first-child .products__description {
+        margin-bottom: 14%;
+    }
+    .products__item:first-child .products__price {
+        width: 244px;
+    }
+    .products__title {
+        padding: 25px 0 3px 0;
+    }
+    .products__withoutDiscount{
+        margin-bottom: 5px;
+    }
+    .products__item:first-child .products__price-cost {
+        margin: 7px 0px 2px 0px;
+    }
+    .products__price {
+        bottom: -1px;
+        width: 245px;
+    }
+    .products .wrap {
+        max-height: 1308px;
+    }
+    .products__price-cost {
+        margin: 8px 0px 16px 0px;
+    }
+    .products__item{
+        height: auto;
+    }
+    .products__price{
+        position: static;
+    }
+    .products__description {
+        margin-bottom: 16px;
+    }
+    .products__price-img {
+        background-position: 0 -1px;
     }
 }
