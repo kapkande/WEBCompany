@@ -4,13 +4,219 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/header.css" />
+    <link rel="stylesheet" href="assets/styles/main/main.css" />
+    <link rel="stylesheet" href="assets/styles/main/products.css" />
+    <link rel="stylesheet" href="assets/styles/main/filter.css" />
+    <link rel="stylesheet" href="assets/styles/main/crutch.css" />
+    <link rel="stylesheet" href="assets/styles/main/popup.css" />
   </head>
   <body>
     <div class="wrapper">
-      <header class="header"></header>
-      <main class="main"></main>
+      <div class="shadow"></div>
+      <header class="header">
+        <div class="logo">
+          <div class="wrap">
+            <button class="logo__burger"></button>
+            <a href="#" class="logo__link">
+              <h1 class="logo__title">ЛОГОТИП</h1>
+            </a>
+            <p class="logo__phone">8 800 777 50 50</p>
+            <div class="header__search">
+              <div class="header__loupe"></div>
+              <img
+                src="assets/icons/loupe.svg"
+                alt="loupe"
+                class="header__search-icon"
+              />
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Поиск товаров"
+                class="header__search-input"
+              />
+            </div>
+            <div class="header__link">
+              <a href="#">Доставка и оплата</a>
+            </div>
+            <div class="header__cart">
+              <a href="#"></a>
+            </div>
+          </div>
+        </div>
+        <nav id="navBar" class="header__nav">
+          <div class="wrap">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a onclick="closePanel()" href="#">МОБИЛЬНЫЕ ТЕЛЕФОНЫ</a>
+              </li>
+              <li class="header__nav-item">
+                <a onclick="closePanel()" href="#">ПЛАНШЕТЫ</a>
+              </li>
+              <li class="header__nav-item">
+                <a onclick="closePanel()" href="#">ФОТОТЕХНИКА</a>
+              </li>
+              <li class="header__nav-item">
+                <a onclick="closePanel()" href="#">НОУТБУКИ</a>
+              </li>
+              <li class="header__nav-item">
+                <a onclick="closePanel()" href="#">ТЕЛЕВИЗОРЫ</a>
+              </li>
+              <li class="header__nav-item header__nav-item-cart">
+                <a href="#">
+                  <div class="header__nav-icon"></div>
+                  <p class="header__nav-text">КОРЗИНА</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="filter">
+          <div class="wrap">
+            <div class="filter__row">
+              <h3 class="filter__title">ФОТОТЕХНИКА</h3>
+              <div class="filter__burger"></div>
+            </div>
+            <div class="filter__block">
+              <div class="custom-select-wrapper">
+                <div class="custom-select" onclick="toggleOptions(event)">
+                  <span>Любого логотипа</span>
+                </div>
+                <div class="custom-options">
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Компакт-камера
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Беззеркальная
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Зеркальная
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Среднеформатная
+                  </div>
+                </div>
+              </div>
+              <div class="custom-select-wrapper">
+                <div class="custom-select" onclick="toggleOptions(event)">
+                  <span>Любого бренда</span>
+                </div>
+                <div class="custom-options">
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Canon
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Nikon
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Sony
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Fujifilm
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Samsung
+                  </div>
+                  <div class="custom-option" onclick="toggleOptions(event)">
+                    Olympus
+                  </div>
+                </div>
+              </div>
+              <div class="filter__priceRange">
+                <p>ПО ЦЕНЕ</p>
+                <div class="filter__inputs">
+                  <div class="filter__input">
+                    <p class="filter__input-text">от</p>
+                    <input id="lowerPrice" type="text" value="500 000" />
+                  </div>
+                  <div class="filter__input">
+                    <p class="filter__input-text">от</p>
+                    <input id="highPrice" type="text" value="25 000 000" />
+                  </div>
+                </div>
+                <p>РУБЛЕЙ</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="products"></section>
+      </main>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup__shadow">
+        <div class="popup__content">
+          <div id="closePopup" class="popup__close"></div>
+          <div class="popup__block">
+            <div class="custom-select-wrapper">
+              <div class="custom-select" onclick="toggleOptions(event)">
+                <span>Любого логотипа</span>
+              </div>
+              <div class="custom-options">
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Компакт-камера
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Беззеркальная
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Зеркальная
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Среднеформатная
+                </div>
+              </div>
+            </div>
+            <div class="custom-select-wrapper">
+              <div class="custom-select" onclick="toggleOptions(event)">
+                <span>Любого бренда</span>
+              </div>
+              <div class="custom-options">
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Canon
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Nikon
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Sony
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Fujifilm
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Samsung
+                </div>
+                <div class="custom-option" onclick="toggleOptions(event)">
+                  Olympus
+                </div>
+              </div>
+            </div>
+            <div class="filter__priceRange">
+              <div class="filter__inputs">
+                <div class="filter__input">
+                  <p class="filter__input-text">от</p>
+                  <input id="lowerPrice" type="text" value="500 000" />
+                </div>
+                <div class="filter__input">
+                  <p class="filter__input-text">от</p>
+                  <input id="highPrice" type="text" value="25 000 000" />
+                </div>
+              </div>
+            </div>
+            <button class="popup__button">ПРИМЕНИТЬ</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

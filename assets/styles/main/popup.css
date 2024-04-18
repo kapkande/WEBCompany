@@ -1,0 +1,119 @@
+.popup__content {
+    position: relative;
+    top: 25%;
+    width: 280px;
+    margin: 0 auto;
+}
+
+.popup__block {
+
+    width: 280px;
+    height: 356px;
+    background-color: #ffffff;
+    margin: 7px auto 0 auto;
+}
+
+.popup__close {
+    margin-left: auto;
+    width: 19px;
+    height: 19px;
+    background-image: url(../../icons/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.popup__close:hover,
+.popup__close:focus,
+.popup__close:active {
+    background-image: url(../../icons/crossActive.svg);
+}
+
+.popup {
+    display: none;
+    overflow: hidden;
+}
+.popup.active{
+    display: block;
+}
+.popup__shadow {
+    overflow: hidden;
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+
+.popup__block .custom-select {
+    margin: 21px 0 0 18px;
+    position: relative;
+    display: flex;
+    padding: 0px 10px 14px 9px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    align-items: flex-end;
+    height: 48px;
+    width: 244px;
+}
+
+.popup__block .filter__priceRange {
+    flex-direction: column
+}
+
+.popup__block .filter__input {
+    width: 244.5px;
+}
+
+.popup__block .filter__input input {
+    width: 207px;
+}
+
+.popup__block .filter__inputs {
+    gap: 19px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__block .filter__priceRange {
+    margin: 17px 0 0 0;
+
+}
+
+.popup__block .popup__button {
+    width: 244px;
+    height: 48px;
+    background-color: #FF3D3D;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.7px;
+    margin: 19px auto 0 auto;
+    display: block;
+    color: #FFFFFF;
+}
+
+.popup__block .popup__button:hover,
+.popup__block .popup__button:focus,
+.popup__block .popup__button:active {
+    background-color: #CE2929;
+}
+
+.popup__block .custom-options {
+    margin: 0 0 0 18px;
+}
+
+.popup__block .custom-option {
+    padding: 0px 0 9px 9px;
+
+}
+
+.popup__block .open .custom-select::before {
+    width: 0;
+}
+
+.popup__block .custom-options {
+    padding: 0;
+}

@@ -1,0 +1,29 @@
+.main {}
+
+.filter {
+    margin: 25px auto 25px auto;
+}
+
+.products {
+    padding-bottom: 38px;
+}
+
+@media (max-width: 1140px) {
+    section {
+        margin: 12px auto 0 auto;
+    }
+
+    .filter {
+        margin: 11px auto 0 auto;
+    }
+}
+
+@media (max-width: 990px) {
+    .filter {
+        margin: 15px auto 0 auto;
+    }
+    section {
+        margin: 24px auto 0 auto;
+    }
+
+}
